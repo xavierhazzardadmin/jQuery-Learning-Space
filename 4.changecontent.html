@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Div and Span</title>
+    <style>
+      .bluebox {
+        background-color: #3b5998;
+        color: white;
+        height: 100px;
+        width: auto;
+      }
+      .yellowbox {
+        background-color: rgb(222, 224, 85);
+        height: 100px;
+        width: auto;
+      }
+      .greenbox {
+        background-color: #31af37;
+        height: 100px;
+        width: auto;
+      }
+      .great {
+        background-color: #5a3279;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="bluebox" id="facebook">
+      <p>Facebook. <span class="great">great</span></p>
+    </div>
+
+    <div class="yellowbox" id="apple"><p>Apple.</p></div>
+    <div class="greenbox" id="microsoft">
+      <p>Microsoft.</p>
+      <p>
+        <a
+          href="https://www.microsoft.com"
+          title="microsoft"
+          id="microsoftLink"
+          target="_blank"
+          >Go to Microsoft</a
+        >
+      </p>
+    </div>
+    <p>Enter your name:<input type="text" /></p>
+    <button id="changeFacebook">Change Facebook text.</button>
+    <button id="changeApple">Change Apple</button>
+    <button id="changeInput">Change Input Value</button>
+    <button id="changeMicrosoft">Change Microsoft</button>
+    <script>
+      $(function() {
+        $("#changeFacebook").click(function() {
+          $("#facebook").html("<p>This is Facebook, It's so cool</p>");
+        });
+        $("#changeApple").click(function() {
+          $("#apple").html("<p>This is Apple</p><p>New IOS Available</p>");
+        });
+        $("#changeInput").click(function() {
+          $("input").val("Sam");
+        });
+        $("#changeMicrosoft").click(function() {
+          $("#microsoftLink").attr({
+            href: "https://www.google.com",
+            title: "Google"
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
