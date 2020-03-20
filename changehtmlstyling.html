@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Div and Span</title>
+    <style>
+      .bluebox {
+        background-color: #3b5998;
+        color: white;
+        height: 100px;
+        width: 300px;
+      }
+
+      .yellowbox {
+        background-color: rgb(222, 224, 85);
+        height: 100px;
+        width: auto;
+      }
+      .greenbox {
+        background-color: #31af37;
+        height: 100px;
+        width: auto;
+      }
+      .great {
+        background-color: #5a3279;
+      }
+
+      .sans-serif {
+        font-family: sans-serif;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button id="changeFacebook">Change Facebook styling.</button>
+    <button id="changeApple">Change Apple styling.</button>
+
+    <div class="bluebox" id="facebook">
+      <p>Facebook is <span class="great">great.</span></p>
+    </div>
+
+    <div class="yellowbox sans-serif" id="apple"><p>Apple.</p></div>
+    <div class="greenbox" id="microsoft">
+      <p id="microsoftParagraph">Microsoft.</p>
+      <p>
+        <a
+          href="https://www.microsoft.com"
+          title="microsoft"
+          id="microsoftLink"
+          target="_blank"
+          >Go to Microsoft</a
+        >
+      </p>
+    </div>
+    <p>Enter your name:<input type="text" /></p>
+
+    <script>
+      $(function() {
+        $("#changeFacebook").click(function() {
+          $("#facebook").css(
+            "width",
+            100 * Math.random() - 50 + $("#facebook").width()
+          );
+          $("#facebook").addClass("greenbox");
+          // alert($("#facebook").outerHeight() + "px");
+          // alert($("#facebook").outerHeight() + "px");
+        });
+        $("#apple").click(function() {
+          $("#apple").removeClass("sans-serif");
+        });
+      });
+    </script>
+  </body>
+</html>
