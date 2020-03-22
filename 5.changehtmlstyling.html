@@ -23,7 +23,7 @@
         height: 100px;
         width: auto;
       }
-      .great {
+      #great {
         background-color: #5a3279;
       }
 
@@ -36,9 +36,10 @@
   <body>
     <button id="changeFacebook">Change Facebook styling.</button>
     <button id="changeApple">Change Apple styling.</button>
-
+    <button id="changeMicrosoft">Change Microsoft.</button>
+    <button id="changeGreat">Change Great.</button>
     <div class="bluebox" id="facebook">
-      <p>Facebook is <span class="great">great.</span></p>
+      <p>Facebook is <span id="great">great.</span></p>
     </div>
 
     <div class="yellowbox sans-serif" id="apple"><p>Apple.</p></div>
@@ -70,7 +71,28 @@
         $("#apple").click(function() {
           $("#apple").removeClass("sans-serif");
           $("#apple").css("position", "absolute");
-          $("#apple").css({ top: 30, left: 30 });
+          $("#apple").css({
+            top: 200 * Math.random(),
+            left: 200 * Math.random(),
+            "background-color":
+              "rgb(" +
+              Math.floor(256 * Math.random()) +
+              "," +
+              Math.floor(256 * Math.random()) +
+              "," +
+              Math.floor(256 * Math.random()) +
+              ")"
+          });
+        });
+        $("#changeMicrosoft").click(function() {
+          $("#microsoft").toggleClass("greenbox");
+        });
+        $("#microsoft").dblclick(function() {
+          $(this).hide();
+        });
+        $("#changeGreat").click(function() {
+          console.log("This is working");
+          $("#great").wrap("<div></div>");
         });
       });
     </script>
