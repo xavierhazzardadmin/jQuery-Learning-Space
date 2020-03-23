@@ -12,4 +12,6 @@ const testReturn = cond => {
   }
 };
 
+
+
 console.log(testReturn(true));
