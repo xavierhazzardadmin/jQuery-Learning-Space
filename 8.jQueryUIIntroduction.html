@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Change HTML styling</title>
+    <style>
+      .bluebox {
+        background-color: #3b5998;
+        color: white;
+        height: 100px;
+        width: 300px;
+        margin-top: 20px;
+      }
+
+      .yellowbox {
+        background-color: rgb(222, 224, 85);
+        height: 100px;
+        width: auto;
+        margin-top: 20px;
+      }
+      .greenbox {
+        background-color: #31af37;
+        height: 100px;
+        width: auto;
+        margin-top: 20px;
+      }
+      #great {
+        background-color: #5a3279;
+      }
+
+      .sans-serif {
+        font-family: sans-serif;
+        margin-top: 20px;
+      }
+
+      p {
+        margin: 0;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="bluebox ui-corner-all" id="facebook">
+      <p>Facebook is <span id="great">great.</span></p>
+    </div>
+
+    <div class="yellowbox sans-serif ui-corner-all" id="apple">
+      <p>Apple.</p>
+    </div>
+    <div class="greenbox ui-corner-all" id="microsoft">
+      <p id="microsoftParagraph">Microsoft.</p>
+      <p>
+        <a
+          href="https://www.microsoft.com"
+          title="microsoft"
+          id="microsoftLink"
+          target="_blank"
+          >Go to Microsoft</a
+        >
+      </p>
+    </div>
+    <div>
+      <p
+        class="ui-state-error sans-serif"
+        style="height: 200px;margin-top: 20px;"
+      >
+        Error Message
+      </p>
+    </div>
+    <script>
+      $(function() {
+        $("#facebook").draggable();
+      });
+    </script>
+  </body>
+</html>
