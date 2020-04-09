@@ -1,17 +1,30 @@
-var isFirstVisit;
+// var isFirstVisit;
 
-const testReturn = cond => {
-  var welcomeMsg = "Welcome to node!";
+// const testReturn = cond => {
+//   var welcomeMsg = "Welcome to node!";
 
-  isFirstVisit = cond;
+//   isFirstVisit = cond;
 
-  if (isFirstVisit == true) {
-    return welcomeMsg;
-  } else {
-    return "Welcome back!";
-  }
-};
+//   if (isFirstVisit == true) {
+//     return welcomeMsg;
+//   } else {
+//     return "Welcome back!";
+//   }
+// };
 
+// console.log(testReturn(true));
 
+var messages = [
+  "",
+  "Hi there!",
+  "Welcome",
+  "Hello there",
+  "Whats up",
+  "Heyyyyyyyyyyyy",
+  "Sup",
+  "Welcome",
+];
 
-console.log(testReturn(true));
+var index = Math.floor(7 * Math.random());
+
+console.log(messages[index]);
