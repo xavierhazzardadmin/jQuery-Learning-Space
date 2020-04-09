@@ -10,7 +10,7 @@
         background-color: #3b5998;
         color: white;
         height: 100px;
-        width: 300px;
+        width: auto;
         margin-top: 20px;
       }
 
@@ -38,6 +38,12 @@
       p {
         margin: 0;
       }
+
+      #container {
+        width: 300px;
+        height: 300px;
+        border-style: dotted;
+      }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link
@@ -51,8 +57,10 @@
       <p>Facebook is <span id="great">great.</span></p>
     </div>
 
-    <div class="yellowbox sans-serif ui-corner-all" id="apple">
-      <p>Apple.</p>
+    <div id="container">
+      <div class="yellowbox sans-serif ui-corner-all" id="apple">
+        <p>Apple.</p>
+      </div>
     </div>
     <div class="greenbox ui-corner-all" id="microsoft">
       <p id="microsoftParagraph">Microsoft.</p>
@@ -66,14 +74,21 @@
         >
       </p>
     </div>
-    <div>
-      <p
-        class="ui-state-error sans-serif"
-        style="height: 200px; margin-top: 20px;"
-      >
-        Error Message
-      </p>
-    </div>
-    <script></script>
+
+    <script>
+      $(function () {
+        $("#facebook").resizable({
+          maxHeight: 200,
+          minHeight: 50,
+          minWidth: 100,
+          maxWidth: 300,
+          aspectRatio: 4 / 3,
+          ghost: true,
+        });
+        $("#apple").resizable({
+          containment: "#container",
+        });
+      });
+    </script>
   </body>
 </html>
