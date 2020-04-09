@@ -36,20 +36,9 @@
         margin-top: 20px;
       }
 
-      p {
-        margin: 0;
-      }
+     
 
-      li {
-        font-size: 2em;
-        margin-bottom: 5px;
-        height: auto;
-        text-align: center;
-      }
-
-      #list .ui-selecting {
-        background: #740da0;
-      }
+     
       
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
