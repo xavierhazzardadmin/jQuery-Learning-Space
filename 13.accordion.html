@@ -1,1 +1,98 @@
-connectedList
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Accordion</title>
+    <style>
+      .bluebox {
+        background-color: #3b5998;
+        color: white;
+        height: auto;
+        width: auto;
+        margin-top: 20px;
+      }
+
+      .yellowbox {
+        background-color: rgb(222, 224, 85);
+        height: auto;
+        width: auto;
+        margin-top: 20px;
+        padding: 10px;
+      }
+      .greenbox {
+        background-color: #31af37;
+        height: 100px;
+        width: auto;
+        margin-top: 20px;
+      }
+      #great {
+        background-color: #5a3279;
+      }
+
+      .sans-serif {
+        font-family: sans-serif;
+        margin-top: 20px;
+      }
+
+      p {
+        margin: 0;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="bluebox ui-corner-all" id="facebook">
+      <h3>Section 1</h3>
+      <div>
+        <p>Content 1</p>
+        <p>Content 1</p>
+        <p>Content 1</p>
+        <p>Content 1</p>
+        <p>Content 1</p>
+        <p>Content 1</p>
+      </div>
+
+      <h3>Section 2</h3>
+      <div><p>Content 2</p></div>
+      <h3>Section 3</h3>
+      <div><p>Content 3</p></div>
+    </div>
+
+    <div class="yellowbox sans-serif ui-corner-all" id="apple">
+      <p>Apple</p>
+    </div>
+
+    <div class="greenbox ui-corner-all" id="microsoft">
+      <p id="microsoftParagraph">Microsoft.</p>
+      <p>
+        <a
+          href="https://www.microsoft.com"
+          title="microsoft"
+          id="microsoftLink"
+          target="_blank"
+          >Go to Microsoft</a
+        >
+      </p>
+    </div>
+
+    <script>
+      $(function () {
+        $("#facebook").accordion({
+          collapsible: true,
+          icons: {
+            header: "ui-icon-circle-arrow-e",
+            activeHeader: "ui-icon-circle-arrow-s",
+          },
+          heightStyle: "content",
+        });
+      });
+    </script>
+  </body>
+</html>
