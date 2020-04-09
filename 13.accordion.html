@@ -48,21 +48,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   </head>
   <body>
-    <div class="bluebox ui-corner-all" id="facebook">
-      <h3>Section 1</h3>
-      <div>
-        <p>Content 1</p>
-        <p>Content 1</p>
-        <p>Content 1</p>
-        <p>Content 1</p>
-        <p>Content 1</p>
-        <p>Content 1</p>
-      </div>
+    <div id="resizer" class="ui-widget-content">
+      <div class="bluebox ui-corner-all" id="facebook">
+        <h3>Section 1</h3>
+        <div>
+          <p>Content 1</p>
+          <p>Content 1</p>
+          <p>Content 1</p>
+          <p>Content 1</p>
+          <p>Content 1</p>
+          <p>Content 1</p>
+        </div>
 
-      <h3>Section 2</h3>
-      <div><p>Content 2</p></div>
-      <h3>Section 3</h3>
-      <div><p>Content 3</p></div>
+        <h3>Section 2</h3>
+        <div><p>Content 2</p></div>
+        <h3>Section 3</h3>
+        <div><p>Content 3</p></div>
+      </div>
     </div>
 
     <div class="yellowbox sans-serif ui-corner-all" id="apple">
@@ -90,7 +92,13 @@
             header: "ui-icon-circle-arrow-e",
             activeHeader: "ui-icon-circle-arrow-s",
           },
-          heightStyle: "content",
+          heightStyle: "fill",
+        });
+
+        $("#resizer").resizable({
+          resize: function () {
+            $("#facebook").accordion("refresh");
+          },
         });
       });
     </script>
