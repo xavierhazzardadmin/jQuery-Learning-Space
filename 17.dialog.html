@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,7 +19,6 @@
         height: 100px;
         width: auto;
         margin-top: 20px;
-        
       }
       .greenbox {
         background-color: #31af37;
@@ -35,11 +34,6 @@
         font-family: sans-serif;
         margin-top: 20px;
       }
-
-     
-
-     
-      
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link
@@ -54,8 +48,8 @@
     </div>
 
     <div class="yellowbox sans-serif ui-corner-all" id="apple">
-	  <p>Apple</p>
-	 </div> 
+      <p>Apple</p>
+    </div>
 
     <div class="greenbox ui-corner-all" id="microsoft">
       <p id="microsoftParagraph">Microsoft.</p>
@@ -69,10 +63,42 @@
         >
       </p>
     </div>
+    <div id="myDialog" title="This is a dialog.">
+      <p>Welcome to our page.</p>
+    </div>
 
+    <div id="confirmation" title="Leave the page?">
+      <p>
+        <span class="ui-icon ui-icon-alert"></span> You will lose all unsaved
+        work. Are you sure?
+      </p>
+    </div>
+    <button id="open">Open Dialog.</button>
+    <button id="goToPreviousPage">Go to previous page.</button>
     <script>
       $(function () {
-        
+        $("#myDialog").dialog({
+          autoOpen: false,
+        });
+        $("#open").click(function () {
+          $("#myDialog").dialog("open");
+        });
+        $("button").button();
+        $("#confirmation").dialog({
+          autoOpen: false,
+          modal: true,
+          buttons: {
+            "Go to previous page": function () {
+              window.history.back();
+            },
+            Cancel: function () {
+              $(this).dialog("close");
+            },
+          },
+        });
+        $("#goToPreviousPage").click(function () {
+          $("#confirmation").dialog("open");
+        });
       });
     </script>
   </body>
