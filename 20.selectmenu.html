@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Change HTML styling</title>
+    <style>
+      .bluebox {
+        background-color: #3b5998;
+        color: white;
+        height: 100px;
+        width: auto;
+        margin-top: 20px;
+      }
+
+      .yellowbox {
+        background-color: rgb(222, 224, 85);
+        height: 100px;
+        width: auto;
+        margin-top: 20px;
+      }
+      .greenbox {
+        background-color: #31af37;
+        height: 100px;
+        width: auto;
+        margin-top: 20px;
+      }
+      #great {
+        background-color: #5a3279;
+      }
+
+      .sans-serif {
+        font-family: sans-serif;
+        margin-top: 20px;
+      }
+
+      #strength {
+        width: 100px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="bluebox ui-corner-all" id="facebook">
+      <label for="strength">Select your greatest strength:</label>
+      <br />
+      <select id="strength" name="strength">
+        <option value="Motivation">Motivation</option>
+        <option value="Creativity" selected>Creativity</option>
+        <option value="Curiosity">Curiosity</option>
+        <option value="Integrity">Integrity</option>
+        <option value="Modesty">Modesty</option>
+      </select>
+    </div>
+
+    <div class="yellowbox sans-serif ui-corner-all" id="apple">
+      <form>
+        <select id="strength2" name="strength2">
+          <optgroup label="group1">
+            <option value="Motivation">Motivation</option>
+            <option value="Creativity" selected>Creativity</option>
+            <option value="Curiosity">Curiosity</option>
+          </optgroup>
+          <optgroup label="group2">
+            <option value="Integrity">Integrity</option>
+            <option value="Modesty">Modesty</option>
+          </optgroup>
+        </select>
+      </form>
+    </div>
+
+    <div class="greenbox ui-corner-all" id="microsoft">
+      <p id="microsoftParagraph">Microsoft.</p>
+      <p>
+        <a
+          href="https://www.microsoft.com"
+          title="microsoft"
+          id="microsoftLink"
+          target="_blank"
+          >Go to Microsoft</a
+        >
+      </p>
+    </div>
+
+    <script>
+      $(function () {
+        $("#strength").selectmenu();
+        $("#strength2").selectmenu();
+      });
+    </script>
+  </body>
+</html>
