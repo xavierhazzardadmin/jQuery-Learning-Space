@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Change HTML styling</title>
+    <style>
+      .bluebox {
+        background-color: #3b5998;
+        color: white;
+        height: 100px;
+        width: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .yellowbox {
+        background-color: rgb(222, 224, 85);
+        height: 100px;
+        width: auto;
+        margin-bottom: 20px;
+      }
+      .greenbox {
+        background-color: #31af37;
+        height: 100px;
+        width: auto;
+        margin-bottom: 20px;
+      }
+      #great {
+        background-color: #5a3279;
+      }
+
+      .sans-serif {
+        font-family: sans-serif;
+        margin-top: 20px;
+      }
+
+      #label {
+        position: absolute;
+        left: 45%;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="bluebox ui-corner-all" id="facebook">
+      <p>Facebook</p>
+    </div>
+
+    <div class="yellowbox sans-serif ui-corner-all" id="apple">
+      <p>Apple</p>
+    </div>
+
+    <div class="greenbox ui-corner-all" id="microsoft">
+      <p id="microsoftParagraph">Microsoft.</p>
+    </div>
+    <div id="progress">
+      <div id="label"></div>
+    </div>
+    <button>Run</button>
+    <script>
+      $(function () {
+        $("#progress").progressbar({
+          value: 0,
+        });
+        var x = 0;
+        $("button").click(function () {
+          $("#label").text("In Progress ...");
+          setTimeout(() => {
+            var progress = setInterval(() => {
+              x++;
+              $("#label").text(x + "%");
+              $("#progress").progressbar("option", "value", x);
+
+              if (x > 99) {
+                clearInterval(progress);
+              }
+            }, 50);
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>
